@@ -1,0 +1,589 @@
+<div class="desktop-layout hidden lg:block">
+<!-- Soft ambient warm decorative blobs in background -->
+<div class="fixed top-12 left-1/4 w-96 h-96 bg-amber-200/25 rounded-full blur-3xl pointer-events-none -z-10 animate-pulse-subtle"></div>
+<div class="fixed top-1/3 right-10 w-[30rem] h-[30rem] bg-orange-100/35 rounded-full blur-3xl pointer-events-none -z-10 animate-float-slow"></div>
+<div class="fixed bottom-20 left-10 w-80 h-80 bg-stone-200/30 rounded-full blur-3xl pointer-events-none -z-10 animate-float-reverse"></div>
+<!-- FLOATING SOFT HEADER -->
+<div class="fixed top-4 left-0 right-0 z-50 px-gutter-mobile lg:px-margin pointer-events-none flex justify-center transition-all duration-500">
+<header class="pointer-events-auto w-full max-w-6xl bg-white/80 backdrop-blur-xl border border-stone-200/60 shadow-[0_8px_30px_rgb(0,0,0,0.04)] rounded-full px-5 py-3 transition-all duration-300 hover:shadow-[0_12px_35px_rgb(0,0,0,0.07)] hover:border-stone-300/80">
+<div class="w-full flex items-center justify-between">
+<a class="flex items-center gap-3 group pl-2 transition-transform duration-300 hover:scale-[1.02]" data-path="accueil" href="#accueil">
+<div class="w-9 h-9 rounded-full bg-stone-900 text-white flex items-center justify-center shadow-sm group-hover:scale-110 group-hover:bg-primary-accent transition-all duration-300">
+<span aria-hidden="true" class="material-symbols-outlined text-[19px]">terminal</span>
+</div>
+<div class="flex flex-col text-left">
+<span class="font-headline-sm text-[16px] font-semibold text-primary tracking-tight leading-tight group-hover:text-primary-accent transition-colors duration-300">Alexandre Morin</span>
+<span class="text-[11px] font-medium text-stone-500 tracking-wide">Créateur &amp; Développeur</span>
+</div>
+</a>
+<nav aria-label="Navigation principale" class="desktop-nav hidden md:flex items-center gap-2 bg-stone-100/70 p-1.5 rounded-full border border-stone-200/50" data-active-classes="text-primary font-medium">
+<a class="text-[13px] font-medium tracking-wide text-stone-600 px-4 py-1.5 rounded-full transition-all duration-200 hover:shadow-sm" href="#galerie" [attr.aria-current]="activeSection() === 'galerie' ? 'location' : null" [class.nav-active]="activeSection() === 'galerie'">Applications</a>
+<a class="text-[13px] font-medium tracking-wide text-stone-600 hover:text-stone-900 hover:bg-white/60 px-4 py-1.5 rounded-full transition-all duration-200" href="#vision" [attr.aria-current]="activeSection() === 'vision' ? 'location' : null" [class.nav-active]="activeSection() === 'vision'">Vision &amp; Approche</a>
+<a class="text-[13px] font-medium tracking-wide text-stone-600 hover:text-stone-900 hover:bg-white/60 px-4 py-1.5 rounded-full transition-all duration-200" href="#contact" [attr.aria-current]="activeSection() === 'contact' ? 'location' : null" [class.nav-active]="activeSection() === 'contact'">Contact</a>
+</nav>
+<div class="flex items-center gap-2">
+<a class="inline-flex items-center justify-center bg-stone-900 text-white text-[13px] font-medium px-5 py-2 rounded-full shadow-sm hover:bg-stone-800 hover:shadow-md hover:scale-105 active:scale-95 transition-all duration-300" href="#galerie">
+<span class="">Explorer</span>
+<span aria-hidden="true" class="material-symbols-outlined text-[16px] ml-1.5 transition-transform duration-300 group-hover:translate-y-0.5">arrow_downward</span>
+</a>
+</div>
+</div>
+</header>
+</div>
+<main id="accueil" class="w-full pt-28 bg-[#FAF8F5] min-h-[calc(100vh-14rem)]">
+<div class="flex flex-col w-full">
+<!-- SECTION 1: HERO -->
+<section class="w-full px-gutter-mobile lg:px-margin pt-space-lg pb-space-xl relative overflow-hidden">
+<div class="max-w-5xl mx-auto flex flex-col items-center text-center">
+<!-- Badge -->
+<div class="reveal-init inline-flex items-center gap-2 px-4 py-1.5 bg-white border border-stone-200/70 rounded-full mb-space-lg shadow-sm hover:shadow-md hover:border-stone-300/80 hover:scale-105 transition-all duration-300 cursor-default" style="transition-delay: 50ms;">
+<span class="w-2 h-2 rounded-full bg-emerald-600 animate-pulse"></span>
+<span class="text-[12px] font-semibold tracking-wide text-stone-600">Galerie de Créations Numériques</span>
+</div>
+<!-- Headline -->
+<h1 class="reveal-init font-headline-xl text-3xl sm:text-5xl lg:text-6xl font-bold text-stone-900 max-w-4xl tracking-tight mb-6 leading-[1.15]" style="transition-delay: 150ms;">
+      Applications &amp; Logiciels conçus avec précision
+    </h1>
+<!-- Subtitle -->
+<p class="reveal-init text-[17px] sm:text-[19px] text-stone-600 max-w-2xl mx-auto mb-10 leading-relaxed font-normal" style="transition-delay: 250ms;">
+      Une vitrine de produits numériques, outils interactifs et expérimentations logicielles autonomes, façonnés et développés de bout en bout avec passion.
+    </p>
+<!-- CTA buttons -->
+<div class="reveal-init flex flex-wrap items-center justify-center gap-3.5 mb-16" style="transition-delay: 350ms;">
+<a class="group px-7 py-3.5 bg-stone-900 text-white rounded-full font-medium text-[14px] shadow-sm hover:shadow-xl hover:bg-stone-800 hover:scale-105 active:scale-95 flex items-center gap-2 transition-all duration-300" href="#galerie">
+<span class="">Explorer la galerie</span>
+<span aria-hidden="true" class="material-symbols-outlined text-[18px] group-hover:translate-y-1 transition-transform duration-300">arrow_downward</span>
+</a>
+<a class="px-7 py-3.5 bg-white text-stone-800 border border-stone-200/80 rounded-full font-medium text-[14px] hover:bg-stone-50 hover:border-stone-300 shadow-sm hover:shadow-md hover:scale-105 active:scale-95 transition-all duration-300" href="#vision">
+        À propos de mes créations
+      </a>
+</div>
+<!-- Soft Pill Counter Grid -->
+<div class="reveal-init w-full bg-white/70 border border-stone-200/60 rounded-3xl p-3 sm:p-4 shadow-[0_10px_35px_rgb(0,0,0,0.02)] backdrop-blur-sm transition-all duration-500 hover:shadow-[0_14px_40px_rgb(0,0,0,0.04)]" style="transition-delay: 450ms;">
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+<div class="interactive-glow flex flex-col items-center justify-center py-6 px-4 rounded-2xl bg-[#F8F6F1] border border-stone-200/40 hover:-translate-y-1 hover:shadow-md hover:border-stone-300/80 hover:bg-white transition-all duration-300 cursor-default">
+<span class="text-3xl lg:text-4xl font-bold text-stone-900 tracking-tight transition-transform duration-300 group-hover:scale-105">100%</span>
+<span class="text-[12px] font-medium text-stone-500 mt-1.5">Conceptions indépendantes</span>
+</div>
+<div class="interactive-glow flex flex-col items-center justify-center py-6 px-4 rounded-2xl bg-[#F8F6F1] border border-stone-200/40 hover:-translate-y-1 hover:shadow-md hover:border-stone-300/80 hover:bg-white transition-all duration-300 cursor-default">
+<span class="text-3xl lg:text-4xl font-bold text-stone-900 tracking-tight transition-transform duration-300 group-hover:scale-105">Open Source</span>
+<span class="text-[12px] font-medium text-stone-500 mt-1.5">Projets &amp; Outils Libres</span>
+</div>
+<div class="interactive-glow flex flex-col items-center justify-center py-6 px-4 rounded-2xl bg-[#F8F6F1] border border-stone-200/40 hover:-translate-y-1 hover:shadow-md hover:border-stone-300/80 hover:bg-white transition-all duration-300 cursor-default">
+<span class="text-3xl lg:text-4xl font-bold text-stone-900 tracking-tight transition-transform duration-300 group-hover:scale-105">Web &amp; Native</span>
+<span class="text-[12px] font-medium text-stone-500 mt-1.5">Expériences interactives</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 2: RÉALISATIONS PHARES (SELECTED PROJECTS) -->
+<section class="w-full px-gutter-mobile lg:px-margin py-20 bg-[#F4F0EA]/55 relative" id="galerie">
+<div class="max-w-6xl mx-auto">
+<div class="reveal-init flex flex-col sm:flex-row sm:items-end justify-between pb-8 mb-10 border-b border-stone-200/50">
+<div class="flex flex-col gap-2">
+<span class="inline-flex items-center gap-2 text-[12px] font-semibold text-stone-500 uppercase tracking-wider">
+<span class="w-1.5 h-1.5 rounded-full bg-stone-400"></span>
+          Sélection de produits
+        </span>
+<h2 class="text-2xl sm:text-4xl font-bold text-stone-900 tracking-tight">Galerie d'Applications</h2>
+</div>
+<span class="text-[13px] font-medium text-stone-500 mt-2 sm:mt-0">Accès direct aux applications &amp; démonstrations</span>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-7">
+<!-- Card 1 (Trellotech - with subtle glowing border & shimmer effect) -->
+<article class="reveal-init interactive-glow shimmer-effect relative overflow-hidden flex flex-col bg-white rounded-3xl p-3.5 border border-amber-800/15 shadow-[0_10px_30px_rgb(0,0,0,0.03)] hover:shadow-[0_22px_45px_rgb(153,70,33,0.12)] hover:-translate-y-1.5 hover:border-primary-accent/40 transition-all duration-300 group" style="transition-delay: 100ms;"><div class="relative w-full aspect-[16/10] overflow-hidden rounded-2xl bg-stone-100"><img alt="Minimalist clean product preview screenshot of a modern productivity kanban task board web application named Trellotech" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" src="https://lh3.googleusercontent.com/aida/AEtjO1UQyNxdHC59ATt0Z0cjcxB7qjCMBfWbVwYFPMjIBJC6fYdQ5GVoxHrTkGuBJvjpP1_TkKKBnwxhm13yi-v_8f-m1cRvKeP5A72yf9mKcivs9wJqvsGTM6_yfj0DlTPlRRiDCnJMxxq8DrHA_FAk1bUlTwBJX0_fd33zAp-3CKzjo1ro5_Fi8TaXCYrtcNBrL-vPF39FLJW9yRON1MWMzHtDAYnTFp0Y9eRdxIm5TZuQsy65lEExoJ5qqoo"/><div class="absolute top-3 left-3"><span class="px-3.5 py-1 bg-white/90 backdrop-blur-md rounded-full text-[11px] font-semibold text-stone-800 shadow-sm border border-stone-200/50">Application Web &amp; Organisation</span></div></div><div class="p-4 sm:p-5 flex flex-col flex-1 justify-between"><div><div class="flex items-baseline justify-between mb-2"><h3 class="text-xl font-bold text-stone-900 tracking-tight group-hover:text-primary-accent transition-colors duration-300">Trellotech</h3><span class="text-[12px] font-medium px-2.5 py-0.5 rounded-full bg-stone-100 text-stone-600 group-hover:bg-amber-100/60 group-hover:text-amber-900 transition-colors">v1.0</span></div><p class="text-[14px] text-stone-600 mb-6 leading-relaxed">Plateforme moderne de gestion de tâches et de projets collaboratifs en tableaux visuels, conçue avec une architecture fullstack modulaire et réactive.</p></div><div class="pt-4 border-t border-stone-100 flex items-center justify-between"><span class="text-[12px] font-medium text-stone-500">TypeScript • Front &amp; Back • Open Source</span><a class="inline-flex items-center gap-1.5 text-[13px] font-semibold text-stone-900 group-hover:text-primary-accent transition-all duration-300 px-3 py-1.5 rounded-full hover:bg-stone-50 hover:scale-105 active:scale-95" href="https://github.com/orgs/trellotech/repositories" target="_blank" rel="noopener noreferrer"><span class="">Explorer le projet</span><span aria-hidden="true" class="material-symbols-outlined text-[16px] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300">arrow_outward</span></a></div></div></article>
+<!-- Card 2 -->
+<article class="reveal-init interactive-glow flex flex-col bg-white rounded-3xl p-3.5 border border-stone-200/70 shadow-[0_10px_30px_rgb(0,0,0,0.03)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] hover:-translate-y-1.5 hover:border-stone-300 transition-all duration-300 group" style="transition-delay: 200ms;">
+<div class="relative w-full aspect-[16/10] overflow-hidden rounded-2xl bg-stone-100">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" alt="Interior architectural concrete structure with natural soft zenithal light and clean geometric shadow lines, minimalist gallery interior" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEchsdYD2VSwfLZUJitEqF-b4kMnAsH3YG3uZvmct-aVxtuz7z2AegdjnyRS-6o0gMmUKZCBoqj61QFBxkGADEqOn5S_lTPYIWOMXwVwzromQWKZ2iNlLndbR1tP3eF2HwK5noJS2FmG2GGAHI5-6jDPoz25LBTsgbE9X5tIP8PJJjQUdKmr7eGFRRLUfoEt-K_a6thd6fKMRztcWQuIZHrnkQunQ7VExGFXsPGIxKNaFB6ACHOIUO"/>
+<div class="absolute top-3 left-3">
+<span class="px-3.5 py-1 bg-white/90 backdrop-blur-md rounded-full text-[11px] font-semibold text-stone-800 shadow-sm border border-stone-200/50">Outil Collaboratif</span>
+</div>
+</div>
+<div class="p-4 sm:p-5 flex flex-col flex-1 justify-between">
+<div>
+<div class="flex items-baseline justify-between mb-2">
+<h3 class="text-xl font-bold text-stone-900 tracking-tight group-hover:text-primary-accent transition-colors duration-300">Aether Engine</h3>
+<span class="text-[12px] font-medium px-2.5 py-0.5 rounded-full bg-stone-100 text-stone-600">v1.1</span>
+</div>
+<p class="text-[14px] text-stone-600 mb-6 leading-relaxed">
+              Espace de travail en réseau à synchronisation locale instantanée (local-first) avec résolution de conflits autonome.
+            </p>
+</div>
+<div class="pt-4 border-t border-stone-100 flex items-center justify-between">
+<span class="text-[12px] font-medium text-stone-500">CRDT • TypeScript</span>
+<a class="inline-flex items-center gap-1.5 text-[13px] font-semibold text-stone-900 group-hover:text-primary-accent transition-all duration-300 px-3 py-1.5 rounded-full hover:bg-stone-50 hover:scale-105 active:scale-95" href="#galerie" (click)="openProject($event, 'Aether Engine')">
+<span class="">Découvrir en ligne</span>
+<span aria-hidden="true" class="material-symbols-outlined text-[16px] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300">arrow_outward</span>
+</a>
+</div>
+</div>
+</article>
+<!-- Card 3 -->
+<article class="reveal-init interactive-glow flex flex-col bg-white rounded-3xl p-3.5 border border-stone-200/70 shadow-[0_10px_30px_rgb(0,0,0,0.03)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] hover:-translate-y-1.5 hover:border-stone-300 transition-all duration-300 group" style="transition-delay: 300ms;">
+<div class="relative w-full aspect-[16/10] overflow-hidden rounded-2xl bg-stone-100">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" alt="Elegant stone sculpture detail in warm neutral ambient studio light, refined craftsmanship and smooth carved curves" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmmTtd3s59BtqbSDqSp986vCys3H3bCQoe60YzDJShjwkL5kjPCS5qGe4zA53jQSpakRRYxa71ZQP1_zOayphiyBs1p51Cxj39qCF8TIR-8YtRkDl-T1ZGGVbyRY544OE8XnSpv_uS_C0DtIxPRruG386d7fPCZsjzaHvTJL9BNvM4cAUaP1LnBASHmgaolHEs3gjwZ6ArBiwklFiKrJtwd3lTQXaEFdie7V0R4-RZI4wt6b3EgZ8J"/>
+<div class="absolute top-3 left-3">
+<span class="px-3.5 py-1 bg-white/90 backdrop-blur-md rounded-full text-[11px] font-semibold text-stone-800 shadow-sm border border-stone-200/50">Expérimentation 3D</span>
+</div>
+</div>
+<div class="p-4 sm:p-5 flex flex-col flex-1 justify-between">
+<div>
+<div class="flex items-baseline justify-between mb-2">
+<h3 class="text-xl font-bold text-stone-900 tracking-tight group-hover:text-primary-accent transition-colors duration-300">Vortex Canvas</h3>
+<span class="text-[12px] font-medium px-2.5 py-0.5 rounded-full bg-stone-100 text-stone-600">v3.0</span>
+</div>
+<p class="text-[14px] text-stone-600 mb-6 leading-relaxed">
+              Générateur procédural de formes et textures interactives conçu pour les interfaces graphiques haute fidélité.
+            </p>
+</div>
+<div class="pt-4 border-t border-stone-100 flex items-center justify-between">
+<span class="text-[12px] font-medium text-stone-500">WebGL • Shaders</span>
+<a class="inline-flex items-center gap-1.5 text-[13px] font-semibold text-stone-900 group-hover:text-primary-accent transition-all duration-300 px-3 py-1.5 rounded-full hover:bg-stone-50 hover:scale-105 active:scale-95" href="#galerie" (click)="openProject($event, 'Vortex Canvas')">
+<span class="">Aperçu interactif</span>
+<span aria-hidden="true" class="material-symbols-outlined text-[16px] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300">arrow_outward</span>
+</a>
+</div>
+</div>
+</article>
+</div>
+</div>
+</section>
+<!-- SECTION 3: SERVICES & EXPERTISE -->
+<section class="w-full px-gutter-mobile lg:px-margin py-20 bg-[#FAF8F5]" id="vision">
+<div class="max-w-6xl mx-auto">
+<div class="reveal-init flex flex-col sm:flex-row sm:items-end justify-between pb-8 mb-10 border-b border-stone-200/60">
+<div class="flex flex-col gap-2">
+<span class="inline-flex items-center gap-2 text-[12px] font-semibold text-stone-500 uppercase tracking-wider">
+<span class="w-2 h-2 rounded-full bg-amber-600"></span>
+          Philosophie de Conception
+        </span>
+<h2 class="text-2xl sm:text-4xl font-bold text-stone-900 tracking-tight">L'Exigence du Logiciel Fait Main</h2>
+</div>
+<div class="flex items-center gap-2 mt-3 sm:mt-0 px-4 py-1.5 rounded-full bg-stone-100 text-stone-600 text-[12px] font-medium border border-stone-200/60 hover:bg-white hover:shadow-xs transition-all">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="">Recherche &amp; Création Personnelle</span>
+</div>
+</div>
+<!-- Soft floating cards grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+<div class="reveal-init interactive-glow p-7 rounded-3xl bg-white border border-stone-200/70 shadow-[0_4px_20px_rgb(0,0,0,0.02)] flex flex-col justify-between hover:shadow-[0_16px_32px_rgb(0,0,0,0.06)] hover:-translate-y-1.5 hover:border-stone-300 transition-all duration-300" style="transition-delay: 100ms;">
+<div>
+<div class="w-9 h-9 rounded-2xl bg-amber-50 text-amber-800 flex items-center justify-center font-bold text-xs mb-5 transition-transform duration-300 group-hover:scale-110">
+            01
+          </div>
+<h3 class="text-lg font-bold text-stone-900 mb-2.5 leading-snug">Local-First &amp; Confidentialité</h3>
+<p class="text-[14px] text-stone-600 leading-relaxed">
+            Des outils qui appartiennent à leurs utilisateurs : fonctionnement sans connexion permanente, zéro pisteurs et données conservées en local.
+          </p>
+</div>
+<div class="pt-6 mt-4 border-t border-stone-100">
+<span class="inline-block text-[11px] font-semibold text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full transition-transform hover:scale-105">Souveraineté des données</span>
+</div>
+</div>
+<div class="reveal-init interactive-glow p-7 rounded-3xl bg-white border border-stone-200/70 shadow-[0_4px_20px_rgb(0,0,0,0.02)] flex flex-col justify-between hover:shadow-[0_16px_32px_rgb(0,0,0,0.06)] hover:-translate-y-1.5 hover:border-stone-300 transition-all duration-300" style="transition-delay: 200ms;">
+<div>
+<div class="w-9 h-9 rounded-2xl bg-amber-50 text-amber-800 flex items-center justify-center font-bold text-xs mb-5 transition-transform duration-300 group-hover:scale-110">
+            02
+          </div>
+<h3 class="text-lg font-bold text-stone-900 mb-2.5 leading-snug">Sobriété &amp; Réactivité Instantanée</h3>
+<p class="text-[14px] text-stone-600 leading-relaxed">
+            Chaque milliseconde compte. Des architectures allégées pour garantir une exécution à 60fps et des temps de réaction imperceptibles.
+          </p>
+</div>
+<div class="pt-6 mt-4 border-t border-stone-100">
+<span class="inline-block text-[11px] font-semibold text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full transition-transform hover:scale-105">Haute performance</span>
+</div>
+</div>
+<div class="reveal-init interactive-glow p-7 rounded-3xl bg-white border border-stone-200/70 shadow-[0_4px_20px_rgb(0,0,0,0.02)] flex flex-col justify-between hover:shadow-[0_16px_32px_rgb(0,0,0,0.06)] hover:-translate-y-1.5 hover:border-stone-300 transition-all duration-300" style="transition-delay: 300ms;">
+<div>
+<div class="w-9 h-9 rounded-2xl bg-amber-50 text-amber-800 flex items-center justify-center font-bold text-xs mb-5 transition-transform duration-300 group-hover:scale-110">
+            03
+          </div>
+<h3 class="text-lg font-bold text-stone-900 mb-2.5 leading-snug">Design Typographique &amp; Fluide</h3>
+<p class="text-[14px] text-stone-600 leading-relaxed">
+            Une clarté visuelle raffinée, tout en douceurs harmonieuses et rondeurs agréables, sans distractions ni frictions.
+          </p>
+</div>
+<div class="pt-6 mt-4 border-t border-stone-100">
+<span class="inline-block text-[11px] font-semibold text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full transition-transform hover:scale-105">Épure &amp; lisibilité</span>
+</div>
+</div>
+<div class="reveal-init interactive-glow p-7 rounded-3xl bg-white border border-stone-200/70 shadow-[0_4px_20px_rgb(0,0,0,0.02)] flex flex-col justify-between hover:shadow-[0_16px_32px_rgb(0,0,0,0.06)] hover:-translate-y-1.5 hover:border-stone-300 transition-all duration-300" style="transition-delay: 400ms;">
+<div>
+<div class="w-9 h-9 rounded-2xl bg-amber-50 text-amber-800 flex items-center justify-center font-bold text-xs mb-5 transition-transform duration-300 group-hover:scale-110">
+            04
+          </div>
+<h3 class="text-lg font-bold text-stone-900 mb-2.5 leading-snug">Code Source &amp; Partage</h3>
+<p class="text-[14px] text-stone-600 leading-relaxed">
+            Documentation publique, composants réutilisables et exploration ouverte des standards du web moderne pour la communauté.
+          </p>
+</div>
+<div class="pt-6 mt-4 border-t border-stone-100">
+<span class="inline-block text-[11px] font-semibold text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full transition-transform hover:scale-105">Open Source</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 4: CALL TO ACTION & CONSULTATION INQUIRY -->
+<section class="w-full px-gutter-mobile lg:px-margin py-20 bg-[#F4F0EA]/60" id="contact">
+<div class="reveal-init max-w-4xl mx-auto rounded-3xl bg-white border border-stone-200/70 p-8 sm:p-14 shadow-[0_15px_35px_rgb(0,0,0,0.03)] hover:shadow-[0_20px_45px_rgb(0,0,0,0.05)] transition-all duration-500 text-center">
+<div class="inline-flex items-center gap-2 px-4 py-1.5 bg-stone-100 border border-stone-200/60 rounded-full mb-6 hover:bg-stone-50 transition-colors">
+<span class="w-2 h-2 rounded-full bg-emerald-600 animate-pulse"></span>
+<span class="text-[12px] font-semibold text-stone-600 uppercase tracking-wider">Carnet de bord &amp; Échanges</span>
+</div>
+<h2 class="text-2xl sm:text-4xl font-bold text-stone-900 tracking-tight mb-4">
+      Suivre les projets ou échanger
+    </h2>
+<p class="text-[15px] sm:text-[16px] text-stone-600 max-w-xl mx-auto mb-8 leading-relaxed">
+      Toutes les applications présentées ici sont développées de manière indépendante. Pour toute question, retour d'expérience ou simple curiosité technique :
+    </p>
+<div class="flex flex-wrap items-center justify-center gap-3.5 mb-10">
+<a class="px-7 py-3.5 bg-stone-900 text-white rounded-full font-medium text-[14px] flex items-center gap-2 hover:bg-stone-800 shadow-sm hover:shadow-lg hover:scale-105 active:scale-95 transition-all duration-300" href="mailto:alexandre&#64;morin.engineering">
+<span aria-hidden="true" class="material-symbols-outlined text-[18px]">mail</span>
+<span class="">Écrire un mot</span>
+</a>
+<a class="px-7 py-3.5 bg-stone-100 border border-stone-200/80 rounded-full text-stone-800 font-medium text-[14px] flex items-center gap-2 hover:bg-white hover:border-stone-300 shadow-xs hover:shadow-sm hover:scale-105 active:scale-95 transition-all duration-300" href="#contact" (click)="openProject($event, 'Code source')">
+<span aria-hidden="true" class="material-symbols-outlined text-[18px]">code</span>
+<span class="">Dépôts GitHub</span>
+</a>
+</div>
+<div class="pt-6 border-t border-stone-100 flex flex-col sm:flex-row items-center justify-between text-stone-500 gap-3 text-[13px]">
+<span class="">Courriel direct : <a class="text-stone-900 font-medium underline underline-offset-4 decoration-stone-300 hover:text-primary-accent transition-colors" href="mailto:alexandre&#64;morin.engineering">alexandre&#64;morin.engineering</a></span>
+<span class="bg-stone-100 px-3 py-1 rounded-full text-[12px]">Projets personnels libres de droits commerciaux</span>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- WARM ROUNDED FOOTER -->
+<footer class="w-full bg-[#FAF8F5] border-t border-stone-200/50">
+<div class="w-full px-gutter-mobile lg:px-margin py-16">
+<div class="max-w-6xl mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8 mb-12 items-start">
+<div class="md:col-span-5 flex flex-col gap-3">
+<div class="flex items-center gap-2.5">
+<div class="w-7 h-7 rounded-full bg-stone-900 text-white flex items-center justify-center text-xs">
+<span aria-hidden="true" class="material-symbols-outlined text-[15px]">terminal</span>
+</div>
+<span class="text-lg font-bold text-stone-900 tracking-tight">Alexandre Morin</span>
+</div>
+<p class="text-[14px] text-stone-600 max-w-sm leading-relaxed">
+            Créateur d'applications logicielles et d'expériences web. Une démarche dédiée aux interfaces soignées, au code propre et aux systèmes performants.
+          </p>
+</div>
+<div class="md:col-span-3 flex flex-col gap-2">
+<span class="text-[12px] font-semibold uppercase tracking-wider text-stone-400 mb-1">Navigation</span>
+<a class="text-[14px] text-stone-600 hover:text-stone-900 transition-colors py-0.5" href="#galerie">Galerie d'Applications</a>
+<a class="text-[14px] text-stone-600 hover:text-stone-900 transition-colors py-0.5" href="#vision">Vision &amp; Approche</a>
+<a class="text-[14px] text-stone-600 hover:text-stone-900 transition-colors py-0.5" href="#contact">Me Contacter</a>
+</div>
+<div class="md:col-span-4 flex flex-col gap-2">
+<span class="text-[12px] font-semibold uppercase tracking-wider text-stone-400 mb-1">Contact &amp; Échanges</span>
+<a class="text-[15px] font-medium text-stone-900 hover:text-primary-accent transition-colors underline underline-offset-4 decoration-stone-200" href="mailto:alexandre&#64;morin.engineering">alexandre&#64;morin.engineering</a>
+<span class="text-[13px] text-stone-500 mt-1">Développements indépendants • Paris, France</span>
+</div>
+</div>
+<div class="w-full flex flex-col sm:flex-row items-center justify-between gap-4 pt-8 border-t border-stone-200/50 text-stone-500 text-[13px]">
+<span class="">© 2026 Alexandre Morin — Créateur d'applications logicielles et d'expériences web.</span>
+<div class="flex items-center gap-3">
+<span class="px-3 py-1 rounded-full bg-white border border-stone-200/60 text-[11px] font-medium text-stone-600 hover:border-stone-300 transition-colors cursor-default">Produits Indépendants</span>
+<span class="px-3 py-1 rounded-full bg-white border border-stone-200/60 text-[11px] font-medium text-stone-600 hover:border-stone-300 transition-colors cursor-default">Open Source</span>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<!-- SCRIPT: Scroll observer & subtle interactive glow -->
+
+</div>
+<div class="mobile-layout lg:hidden"><header class="fixed top-0 w-full z-50 pt-safe bg-mobile-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.03)]"><div class="h-16 px-gutter-mobile flex items-center justify-between"><div class="flex items-center gap-space-xs"><div class="w-9 h-9 rounded-full bg-mobile-secondary-container flex items-center justify-center"><span aria-hidden="true" class="material-symbols-outlined text-mobile-secondary text-[20px]">interests</span></div><div class="flex flex-col"><span class="font-label-lg text-label-lg text-mobile-on-surface leading-tight">Alexandre Morin</span><span class="font-label-sm text-label-sm text-mobile-on-surface-variant leading-none">Atelier Logiciel</span></div></div><div class="flex items-center gap-space-xs"><a href="#contact-mobile" aria-label="Contact et profil" class="w-8 h-8 rounded-full bg-mobile-primary flex items-center justify-center"><span aria-hidden="true" class="material-symbols-outlined text-mobile-on-primary text-[18px]">person</span></a></div></div></header><main id="accueil-mobile" class="flex flex-col relative w-full pt-16 pb-28 bg-mobile-surface px-margin-mobile"><div class="flex flex-col w-full">
+<!-- Hero Section -->
+<section class="flex flex-col pt-4 pb-8">
+<!-- Pill Tag -->
+<div class="inline-flex items-center gap-2 self-start px-3.5 py-1.5 rounded-full bg-mobile-secondary-container/40 text-mobile-on-secondary-container shadow-sm mb-4">
+<span class="w-2 h-2 rounded-full bg-mobile-secondary animate-pulse"></span>
+<span class="font-label-sm text-label-sm tracking-wide">Galerie de Créations Numériques</span>
+</div>
+<!-- Hero Title -->
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-mobile-on-surface mb-3 tracking-tight">
+      Applications &amp; Logiciels conçus avec précision
+    </h1>
+<!-- Hero Description -->
+<p class="font-body-md text-body-md text-mobile-on-surface-variant mb-6 leading-relaxed">
+      Une vitrine de produits numériques, outils interactifs et expérimentations logicielles autonomes, façonnés et développés de bout en bout avec passion.
+    </p>
+<!-- Hero CTAs -->
+<div class="flex flex-col gap-3">
+<a class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-mobile-inverse-surface text-mobile-inverse-on-surface font-label-lg text-label-lg shadow-[0_8px_20px_rgba(48,49,47,0.14)] active:scale-[0.98] transition-transform" href="#selection-projets">
+<span>Explorer la galerie</span>
+<span aria-hidden="true" class="material-symbols-outlined text-[18px]">arrow_downward</span>
+</a>
+<a class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-mobile-surface-container-lowest text-mobile-on-surface font-label-lg text-label-lg shadow-[0_4px_16px_rgba(44,37,35,0.04)] active:scale-[0.98] transition-transform" href="#philosophie">
+<span>À propos de mes créations</span>
+<span aria-hidden="true" class="material-symbols-outlined text-[18px]">info</span>
+</a>
+</div>
+<!-- Metrics Row -->
+<div class="grid grid-cols-3 gap-2.5 mt-8">
+<div class="flex flex-col items-center justify-center p-3.5 rounded-2xl bg-mobile-surface-container-lowest shadow-[0_4px_20px_rgba(44,37,35,0.03)] text-center">
+<span class="font-headline-md text-headline-md text-mobile-primary font-bold">100%</span>
+<span class="font-label-sm text-label-sm text-mobile-on-surface-variant mt-1 leading-tight">Indépendant</span>
+</div>
+<div class="flex flex-col items-center justify-center p-3.5 rounded-2xl bg-mobile-surface-container-lowest shadow-[0_4px_20px_rgba(44,37,35,0.03)] text-center">
+<span class="font-label-lg text-label-lg text-mobile-secondary font-bold">Open Source</span>
+<span class="font-label-sm text-label-sm text-mobile-on-surface-variant mt-1 leading-tight">Projets Libres</span>
+</div>
+<div class="flex flex-col items-center justify-center p-3.5 rounded-2xl bg-mobile-surface-container-lowest shadow-[0_4px_20px_rgba(44,37,35,0.03)] text-center">
+<span class="font-label-lg text-label-lg text-mobile-tertiary font-bold">Web &amp; Native</span>
+<span class="font-label-sm text-label-sm text-mobile-on-surface-variant mt-1 leading-tight">Interactif</span>
+</div>
+</div>
+</section>
+<!-- Showcase Section -->
+<section class="flex flex-col pt-4 pb-10" id="selection-projets">
+<div class="flex items-center justify-between mb-4">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-mobile-primary tracking-widest uppercase">Sélection de Produits</span>
+<h2 class="font-headline-sm text-headline-sm text-mobile-on-surface">Galerie d'Applications</h2>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-mobile-surface-container-high text-mobile-on-surface font-label-sm text-label-sm">3 créations</span>
+</div>
+<div class="mobile-projects grid grid-cols-1 md:grid-cols-2 gap-5">
+<!-- Card 1 : Trellotech (Featured Hero Card) -->
+<article class="reveal-init interactive-glow shimmer-effect flex flex-col rounded-3xl bg-mobile-surface-container-lowest p-5 shadow-[0_12px_32px_rgba(44,37,35,0.06)] relative overflow-hidden group">
+<!-- Badge & Version Pill Header -->
+<div class="flex items-center justify-between gap-2 mb-3.5">
+<span class="px-3 py-1 rounded-full bg-mobile-secondary-container/40 text-mobile-on-secondary-container font-label-sm text-label-sm font-semibold">
+            Application Web &amp; Organisation
+          </span>
+<span class="px-2.5 py-0.5 rounded-full bg-mobile-surface-container text-mobile-on-surface-variant font-label-sm text-label-sm font-medium">
+            v1.0
+          </span>
+</div>
+<!-- Embedded App Preview Mockup Inspired by Roadmap / Kanban Board -->
+<div class="relative w-full rounded-2xl overflow-hidden bg-mobile-surface-container-low shadow-sm mb-4">
+<img alt="Aperçu visuel de Trellotech" class="w-full h-44 object-cover object-top" src="https://lh3.googleusercontent.com/aida/AEtjO1UQyNxdHC59ATt0Z0cjcxB7qjCMBfWbVwYFPMjIBJC6fYdQ5GVoxHrTkGuBJvjpP1_TkKKBnwxhm13yi-v_8f-m1cRvKeP5A72yf9mKcivs9wJqvsGTM6_yfj0DlTPlRRiDCnJMxxq8DrHA_FAk1bUlTwBJX0_fd33zAp-3CKzjo1ro5_Fi8TaXCYrtcNBrL-vPF39FLJW9yRON1MWMzHtDAYnTFp0Y9eRdxIm5TZuQsy65lEExoJ5qqoo"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent pointer-events-none"></div>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-mobile-on-surface mb-1.5 flex items-center justify-between">
+<span>Trellotech</span>
+<span class="w-2.5 h-2.5 rounded-full bg-mobile-secondary"></span>
+</h3>
+<p class="font-body-sm text-body-sm text-mobile-on-surface-variant mb-4 leading-relaxed">
+          Plateforme moderne de gestion de tâches et de projets collaboratifs en tableaux visuels, conçue avec une architecture fullstack modulaire et réactive.
+        </p>
+<!-- Tech tags -->
+<div class="flex flex-wrap gap-1.5 mb-5">
+<span class="px-2.5 py-1 rounded-full bg-mobile-surface-container text-mobile-on-surface font-label-sm text-label-sm">TypeScript</span>
+<span class="px-2.5 py-1 rounded-full bg-mobile-surface-container text-mobile-on-surface font-label-sm text-label-sm">Front &amp; Back</span>
+<span class="px-2.5 py-1 rounded-full bg-mobile-surface-container text-mobile-on-surface font-label-sm text-label-sm">Open Source</span>
+</div>
+<!-- Action Button -->
+<a class="w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-mobile-primary text-mobile-on-primary font-label-lg text-label-lg shadow-[0_6px_16px_rgba(153,70,33,0.22)] active:scale-[0.98] transition-transform" href="https://github.com/orgs/trellotech/repositories" target="_blank" rel="noopener noreferrer"><span>Explorer le projet</span>
+<span aria-hidden="true" class="material-symbols-outlined text-[18px]">north_east</span>
+</a>
+</article>
+<!-- Card 2 : Aether Engine -->
+<article class="reveal-init interactive-glow flex flex-col rounded-3xl bg-mobile-surface-container-lowest p-5 shadow-[0_8px_24px_rgba(44,37,35,0.05)]">
+<div class="flex items-center justify-between gap-2 mb-3">
+<span class="px-3 py-1 rounded-full bg-mobile-primary-fixed/40 text-mobile-on-primary-fixed-variant font-label-sm text-label-sm font-semibold">
+            Outil Collaboratif
+          </span>
+<span class="px-2.5 py-0.5 rounded-full bg-mobile-surface-container text-mobile-on-surface-variant font-label-sm text-label-sm font-medium">
+            v1.1
+          </span>
+</div>
+<!-- Decorative Abstract Schematic Diagram representing Local-first syncing -->
+<div class="w-full h-32 rounded-2xl bg-mobile-surface-container-low mb-4 flex items-center justify-center relative overflow-hidden px-4">
+<div class="w-full flex items-center justify-between relative z-10">
+<div class="flex flex-col items-center gap-1.5">
+<div class="w-10 h-10 rounded-2xl bg-mobile-surface-container-lowest shadow-sm flex items-center justify-center text-mobile-primary">
+<span aria-hidden="true" class="material-symbols-outlined text-[20px]">laptop_mac</span>
+</div>
+<span class="font-label-sm text-label-sm text-mobile-on-surface-variant">Local Peer</span>
+</div>
+<!-- Sync Graphic Line -->
+<div class="flex-1 mx-3 flex flex-col items-center">
+<div class="w-full flex items-center justify-center gap-1">
+<span class="h-0.5 flex-1 bg-mobile-outline-variant/60"></span>
+<span aria-hidden="true" class="material-symbols-outlined text-mobile-primary text-[18px]">sync_alt</span>
+<span class="h-0.5 flex-1 bg-mobile-outline-variant/60"></span>
+</div>
+<span class="font-label-sm text-label-sm text-mobile-secondary font-medium mt-1">CRDT Conflict-Free</span>
+</div>
+<div class="flex flex-col items-center gap-1.5">
+<div class="w-10 h-10 rounded-2xl bg-mobile-surface-container-lowest shadow-sm flex items-center justify-center text-mobile-secondary">
+<span aria-hidden="true" class="material-symbols-outlined text-[20px]">phone_iphone</span>
+</div>
+<span class="font-label-sm text-label-sm text-mobile-on-surface-variant">Node B</span>
+</div>
+</div>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-mobile-on-surface mb-1.5">
+          Aether Engine
+        </h3>
+<p class="font-body-sm text-body-sm text-mobile-on-surface-variant mb-4 leading-relaxed">
+          Espace de travail en réseau à synchronisation locale instantanée (local-first) avec résolution de conflits autonome.
+        </p>
+<div class="flex flex-wrap gap-1.5 mb-5">
+<span class="px-2.5 py-1 rounded-full bg-mobile-surface-container text-mobile-on-surface font-label-sm text-label-sm">CRDT</span>
+<span class="px-2.5 py-1 rounded-full bg-mobile-surface-container text-mobile-on-surface font-label-sm text-label-sm">TypeScript</span>
+<span class="px-2.5 py-1 rounded-full bg-mobile-surface-container text-mobile-on-surface font-label-sm text-label-sm">Offline First</span>
+</div>
+<button class="w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-mobile-surface-container text-mobile-on-surface font-label-lg text-label-lg active:scale-[0.98] transition-transform" type="button" (click)="openProject($event, 'Aether Engine')"><span>Découvrir en ligne</span>
+<span aria-hidden="true" class="material-symbols-outlined text-[18px]">north_east</span>
+</button>
+</article>
+<!-- Card 3 : Vortex Canvas -->
+<article class="reveal-init interactive-glow flex flex-col rounded-3xl bg-mobile-surface-container-lowest p-5 shadow-[0_8px_24px_rgba(44,37,35,0.05)]">
+<div class="flex items-center justify-between gap-2 mb-3">
+<span class="px-3 py-1 rounded-full bg-mobile-tertiary-fixed/60 text-mobile-on-tertiary-fixed-variant font-label-sm text-label-sm font-semibold">
+            Expérimentation 3D
+          </span>
+<span class="px-2.5 py-0.5 rounded-full bg-mobile-surface-container text-mobile-on-surface-variant font-label-sm text-label-sm font-medium">
+            v3.0
+          </span>
+</div>
+<!-- Visual Art Canvas Generator Preview -->
+<div class="w-full h-32 rounded-2xl bg-mobile-surface-container-high mb-4 flex items-center justify-center relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-tr from-mobile-primary/20 via-mobile-tertiary/15 to-mobile-secondary/20"></div>
+<svg class="w-full h-full opacity-60" fill="none" preserveAspectRatio="none" viewBox="0 0 200 100">
+<path d="M0,50 Q50,0 100,50 T200,50" fill="none" stroke="#994621" stroke-width="2.5"></path>
+<path d="M0,60 Q50,110 100,60 T200,60" fill="none" stroke="#825505" stroke-width="1.8"></path>
+<circle cx="100" cy="50" fill="#d9774e" fill-opacity="0.3" r="18"></circle>
+</svg>
+<div class="absolute bottom-2 right-2 px-2.5 py-0.5 rounded-full bg-mobile-surface-container-lowest/80 backdrop-blur-sm text-mobile-on-surface font-label-sm text-label-sm">
+            60 FPS Shaders
+          </div>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-mobile-on-surface mb-1.5">
+          Vortex Canvas
+        </h3>
+<p class="font-body-sm text-body-sm text-mobile-on-surface-variant mb-4 leading-relaxed">
+          Générateur procédural de formes et textures interactives conçu pour les interfaces graphiques haute fidélité.
+        </p>
+<div class="flex flex-wrap gap-1.5 mb-5">
+<span class="px-2.5 py-1 rounded-full bg-mobile-surface-container text-mobile-on-surface font-label-sm text-label-sm">WebGL</span>
+<span class="px-2.5 py-1 rounded-full bg-mobile-surface-container text-mobile-on-surface font-label-sm text-label-sm">Shaders</span>
+<span class="px-2.5 py-1 rounded-full bg-mobile-surface-container text-mobile-on-surface font-label-sm text-label-sm">Génération</span>
+</div>
+<button class="w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-mobile-surface-container text-mobile-on-surface font-label-lg text-label-lg active:scale-[0.98] transition-transform" type="button" (click)="openProject($event, 'Vortex Canvas')"><span>Aperçu interactif</span>
+<span aria-hidden="true" class="material-symbols-outlined text-[18px]">north_east</span>
+</button>
+</article>
+</div>
+</section>
+<!-- Craft Philosophy Section -->
+<section class="flex flex-col pt-2 pb-10" id="philosophie">
+<div class="flex flex-col mb-5">
+<span class="font-label-sm text-label-sm text-mobile-primary tracking-widest uppercase">Philosophie de Conception</span>
+<h2 class="font-headline-sm text-headline-sm text-mobile-on-surface">L'Exigence du Logiciel Fait Main</h2>
+<p class="font-body-sm text-body-sm text-mobile-on-surface-variant mt-1.5 leading-relaxed">
+        Chaque outil est sculpté avec la même minutie qu’une pièce d’ébénisterie : légèreté de l’exécution, autonomie des données et raffinement du détail.
+      </p>
+</div>
+<!-- Soft Stacked Cards for Principles -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+<!-- 01 Local-first -->
+<div class="flex items-start gap-3.5 p-4 rounded-3xl bg-mobile-surface-container-lowest shadow-[0_4px_18px_rgba(44,37,35,0.04)]">
+<div class="w-10 h-10 rounded-2xl bg-mobile-secondary-container/50 text-mobile-secondary flex items-center justify-center shrink-0">
+<span class="font-label-lg text-label-lg font-bold">01</span>
+</div>
+<div class="flex flex-col min-w-0">
+<h4 class="font-label-lg text-label-lg text-mobile-on-surface">Local-First &amp; Confidentialité</h4>
+<p class="font-body-sm text-body-sm text-mobile-on-surface-variant mt-0.5 leading-relaxed">
+            Vos données vivent sur vos appareils d’abord. Aucune dépendance obligée à un nuage propriétaire.
+          </p>
+</div>
+</div>
+<!-- 02 Sobriety -->
+<div class="flex items-start gap-3.5 p-4 rounded-3xl bg-mobile-surface-container-lowest shadow-[0_4px_18px_rgba(44,37,35,0.04)]">
+<div class="w-10 h-10 rounded-2xl bg-mobile-primary-fixed/50 text-mobile-primary flex items-center justify-center shrink-0">
+<span class="font-label-lg text-label-lg font-bold">02</span>
+</div>
+<div class="flex flex-col min-w-0">
+<h4 class="font-label-lg text-label-lg text-mobile-on-surface">Sobriété &amp; Réactivité Instantanée</h4>
+<p class="font-body-sm text-body-sm text-mobile-on-surface-variant mt-0.5 leading-relaxed">
+            Temps de chargement quasi nul, zéro script superflu, consommation énergétique mesurée.
+          </p>
+</div>
+</div>
+<!-- 03 Typographic Design -->
+<div class="flex items-start gap-3.5 p-4 rounded-3xl bg-mobile-surface-container-lowest shadow-[0_4px_18px_rgba(44,37,35,0.04)]">
+<div class="w-10 h-10 rounded-2xl bg-mobile-tertiary-fixed/60 text-mobile-tertiary flex items-center justify-center shrink-0">
+<span class="font-label-lg text-label-lg font-bold">03</span>
+</div>
+<div class="flex flex-col min-w-0">
+<h4 class="font-label-lg text-label-lg text-mobile-on-surface">Design Typographique &amp; Fluide</h4>
+<p class="font-body-sm text-body-sm text-mobile-on-surface-variant mt-0.5 leading-relaxed">
+            Une esthétique inspirée de l’imprimerie d’art : contrastes chaleureux, respirations généreuses.
+          </p>
+</div>
+</div>
+<!-- 04 Open Source -->
+<div class="flex items-start gap-3.5 p-4 rounded-3xl bg-mobile-surface-container-lowest shadow-[0_4px_18px_rgba(44,37,35,0.04)]">
+<div class="w-10 h-10 rounded-2xl bg-mobile-surface-container text-mobile-on-surface-variant flex items-center justify-center shrink-0">
+<span class="font-label-lg text-label-lg font-bold">04</span>
+</div>
+<div class="flex flex-col min-w-0">
+<h4 class="font-label-lg text-label-lg text-mobile-on-surface">Code Source &amp; Partage</h4>
+<p class="font-body-sm text-body-sm text-mobile-on-surface-variant mt-0.5 leading-relaxed">
+            Des outils libres et documentés, pensés pour être inspectés, adaptés et transmis à la communauté.
+          </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Connect / Community Box -->
+<section id="contact-mobile" class="flex flex-col p-6 rounded-3xl bg-mobile-surface-container-low mb-8 relative overflow-hidden shadow-[0_6px_24px_rgba(44,37,35,0.04)]">
+<div class="flex items-center gap-2 mb-2 text-mobile-primary">
+<span aria-hidden="true" class="material-symbols-outlined text-[20px]">handshake</span>
+<span class="font-label-sm text-label-sm font-bold uppercase tracking-wider">Échange &amp; Transmission</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-mobile-on-surface mb-2">
+      Suivre les projets ou échanger
+    </h3>
+<p class="font-body-sm text-body-sm text-mobile-on-surface-variant mb-5 leading-relaxed">
+      Toutes les applications présentées ici sont développées de manière indépendante. Pour toute question, retour d'expérience ou simple curiosité technique :
+    </p>
+<!-- Direct Email Badge -->
+<div class="inline-flex items-center gap-2 self-start px-3.5 py-1.5 rounded-full bg-mobile-surface-container-lowest shadow-sm mb-5">
+<span aria-hidden="true" class="material-symbols-outlined text-mobile-secondary text-[16px]">alternate_email</span>
+<span class="font-label-md text-label-md text-mobile-on-surface select-all">alexandre&#64;morin.engineering</span>
+</div>
+<!-- Action Buttons -->
+<div class="flex flex-col sm:flex-row gap-3">
+<a class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-mobile-primary text-mobile-on-primary font-label-md text-label-md shadow-sm active:scale-[0.98] transition-transform" href="mailto:alexandre&#64;morin.engineering">
+<span aria-hidden="true" class="material-symbols-outlined text-[18px]">mail</span>
+<span>Écrire un mot</span>
+</a>
+<a class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-mobile-surface-container-lowest text-mobile-on-surface font-label-md text-label-md shadow-sm active:scale-[0.98] transition-transform" href="https://github.com" rel="noopener noreferrer" target="_blank">
+<span aria-hidden="true" class="material-symbols-outlined text-[18px]">code</span>
+<span>Dépôts GitHub</span>
+</a>
+</div>
+</section>
+<!-- Clean Minimal Footer -->
+<footer class="flex flex-col items-center justify-center py-4 text-center">
+<div class="w-8 h-8 rounded-full bg-mobile-surface-container flex items-center justify-center text-mobile-on-surface-variant mb-2">
+<span aria-hidden="true" class="material-symbols-outlined text-[16px]">draw</span>
+</div>
+<p class="font-label-sm text-label-sm text-mobile-on-surface-variant">
+      Façonné à la main par Alexandre Morin • 2026
+    </p>
+<p class="font-label-sm text-label-sm text-mobile-outline-variant mt-0.5">
+      Sobriété logicielle • Conception éthique &amp; durable
+    </p>
+</footer>
+</div>
+</main><nav aria-label="Navigation mobile" class="mobile-tabs fixed bottom-0 w-full z-50 pb-safe bg-mobile-surface/85 backdrop-blur-xl shadow-[0_-4px_24px_rgba(44,37,35,0.06)]" data-active-classes="text-mobile-primary bg-mobile-primary-fixed/40"><div class="flex justify-around items-center h-20 px-space-sm"><a class="flex flex-col items-center justify-center gap-1 min-w-[44px] min-h-[44px] px-space-sm py-1.5 rounded-full transition-all duration-300 text-mobile-on-surface-variant" [attr.aria-current]="activeTab() === 'vitrine' ? 'location' : null" [class.tab-active]="activeTab() === 'vitrine'" (click)="activeTab.set('vitrine')" href="#accueil-mobile"><span aria-hidden="true" class="material-symbols-outlined text-[22px]">space_dashboard</span><span class="font-label-sm text-label-sm">Vitrine</span></a><a class="flex flex-col items-center justify-center gap-1 min-w-[44px] min-h-[44px] px-space-sm py-1.5 rounded-full text-mobile-on-surface-variant hover:text-mobile-on-surface transition-all duration-300" [attr.aria-current]="activeTab() === 'labo' ? 'location' : null" [class.tab-active]="activeTab() === 'labo'" (click)="activeTab.set('labo')" href="#selection-projets"><span aria-hidden="true" class="material-symbols-outlined text-[22px]">science</span><span class="font-label-sm text-label-sm">Labo</span></a><a class="flex flex-col items-center justify-center gap-1 min-w-[44px] min-h-[44px] px-space-sm py-1.5 rounded-full text-mobile-on-surface-variant hover:text-mobile-on-surface transition-all duration-300" [attr.aria-current]="activeTab() === 'manifeste' ? 'location' : null" [class.tab-active]="activeTab() === 'manifeste'" (click)="activeTab.set('manifeste')" href="#philosophie"><span aria-hidden="true" class="material-symbols-outlined text-[22px]">auto_stories</span><span class="font-label-sm text-label-sm">Manifeste</span></a><a class="flex flex-col items-center justify-center gap-1 min-w-[44px] min-h-[44px] px-space-sm py-1.5 rounded-full text-mobile-on-surface-variant hover:text-mobile-on-surface transition-all duration-300" [attr.aria-current]="activeTab() === 'profil' ? 'location' : null" [class.tab-active]="activeTab() === 'profil'" (click)="activeTab.set('profil')" href="#contact-mobile"><span aria-hidden="true" class="material-symbols-outlined text-[22px]">palette</span><span class="font-label-sm text-label-sm">Profil</span></a></div></nav></div>
+<dialog #projectDialog class="project-dialog" (click)="closeOnBackdrop($event)" (close)="selected.set('')">
+<div class="dialog-content"><button class="dialog-close" aria-label="Fermer l’aperçu" (click)="projectDialog.close()">×</button><span class="eyebrow">APERÇU DU PROJET</span><h2>{{ selected() }}</h2>
+@if (selected() === 'Trellotech') { <p>Un tableau pour organiser vos prochaines idées.</p><form (submit)="addTask($event)"><input aria-label="Nouvelle tâche" placeholder="Une nouvelle idée…" [value]="draft()" (input)="draft.set($any($event.target).value)" maxlength="120"><button class="demo-button" type="submit">Ajouter</button></form><div class="task-list">@for (task of tasks(); track $index) { <label><input type="checkbox"><span>{{task}}</span></label> }</div> }
+@else if (selected() === 'Aether Engine') { <p>Un espace pour capturer vos idées. Vos notes restent dans ce navigateur.</p><textarea aria-label="Note personnelle" [value]="note()" (input)="saveNote($any($event.target).value)" placeholder="Commencez à écrire…"></textarea><span class="saved">Enregistrement local automatique</span> }
+@else if (selected() === 'Vortex Canvas') { <p>Explorez une forme et ajustez son mouvement.</p><div class="vortex" [style.animation-duration.s]="speed()"><div></div></div><label class="speed-label">Vitesse <input aria-label="Vitesse de rotation" type="range" min="2" max="20" [value]="speed()" (input)="speed.set(+$any($event.target).value)"></label> }
+@else { <p>Les liens vers les dépôts seront ajoutés lors de la personnalisation de cette vitrine.</p> }
+</div></dialog>

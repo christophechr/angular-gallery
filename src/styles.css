@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+html{scroll-behavior:smooth;scroll-padding-top:110px}body{margin:0;background:#faf8f5;color:#1b1c1a;font-family:'Plus Jakarta Sans',sans-serif}:focus-visible{outline:2px solid #994621;outline-offset:4px}.mobile-toggle{display:none;padding:6px;border-radius:50%}.mobile-nav{display:flex;flex-direction:column;padding:18px 12px 8px;gap:14px;font-size:14px}main>div>section:first-child{animation:entrance .65s ease-out both}.project-dialog{border:1px solid #e7e5e4;border-radius:28px;padding:0;width:min(560px,calc(100% - 32px));color:#201f1e;box-shadow:0 30px 90px #0002}.project-dialog::backdrop{background:#201f1e66;backdrop-filter:blur(6px)}.project-dialog[open]{animation:entrance .2s ease-out}.dialog-content{padding:36px;position:relative}.dialog-close{position:absolute;top:14px;right:18px;font-size:28px;padding:0 8px}.eyebrow{font-size:11px;letter-spacing:.13em;color:#78716c}.dialog-content h2{font-size:28px;font-weight:700;margin:14px 0}.dialog-content p{font-size:14px;line-height:1.7;color:#57534e;margin-bottom:24px}.dialog-content form{display:flex;gap:10px}.dialog-content input:not([type=checkbox]):not([type=range]),textarea{width:100%;min-width:0;border:1px solid #e7e5e4;border-radius:12px;padding:12px;background:#faf8f5;font:inherit;font-size:14px}.demo-button{background:#201f1e;color:white;padding:12px 18px;border-radius:12px}.task-list{display:grid;gap:12px;margin-top:24px}.task-list label{display:flex;gap:12px;align-items:center;padding:14px;border-radius:12px;background:#f4f0ea;font-size:14px}.task-list input{accent-color:#4b6456}.task-list input:checked+span{text-decoration:line-through;color:#78716c}textarea{min-height:180px;resize:vertical}.saved{font-size:12px;color:#4b6456;display:block;margin-top:12px}.vortex{width:160px;height:160px;margin:30px auto;border-radius:35% 65% 65% 35%;background:linear-gradient(135deg,#d9774e,#ffdbce,#4b6456);animation:spin 10s linear infinite;box-shadow:inset 12px 12px 24px #fff6}.vortex div{width:90px;height:90px;border-radius:50%;background:#faf8f5;transform:translate(35px,35px)}.speed-label{display:flex;gap:16px;align-items:center;font-size:14px}.speed-label input{flex:1;accent-color:#994621}@keyframes spin{to{transform:rotate(360deg)}}@keyframes entrance{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}@media(max-width:767px){.mobile-toggle{display:flex}header:has(.mobile-nav){border-radius:24px}.dialog-content{padding:28px 22px}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
+
+/* Mobile and tablet layout from the responsive reference. */
+.mobile-layout { width:100%; }
+.mobile-layout header { padding-top:env(safe-area-inset-top,0px); }
+.mobile-layout main { padding-top:calc(80px + env(safe-area-inset-top,0px)); padding-bottom:calc(112px + env(safe-area-inset-bottom,0px)); max-width:880px; margin:auto; }
+.mobile-tabs { padding-bottom:env(safe-area-inset-bottom,0px); }
+.mobile-tabs a { flex:1; max-width:100px; min-height:52px; }
+.mobile-tabs a.tab-active { color:#994621; background:#ffdbce66; }
+.mobile-layout article { min-width:0; }
+.mobile-layout article > button, .mobile-layout article > a { margin-top:auto; min-height:44px; }
+.mobile-layout a { min-height:44px; }
+.project-dialog { max-height:calc(100dvh - 32px); overflow:auto; }
+.task-list span { overflow-wrap:anywhere; }
+@media(max-width:1023px) { html { scroll-padding-top:calc(84px + env(safe-area-inset-top,0px)); } }
+@media(min-width:768px) and (max-width:1023px) { .mobile-layout main { padding-left:32px; padding-right:32px; } .mobile-layout h1 { max-width:640px; font-size:38px; line-height:1.2; } .mobile-projects article:first-child { grid-column:1 / -1; } .mobile-projects article:first-child img { height:280px; } }
+@media(max-width:359px) { .mobile-layout main { padding-left:12px; padding-right:12px; } .mobile-layout article { padding:16px; } .mobile-layout .grid.grid-cols-3 > div { padding:12px 6px; } .mobile-tabs a { padding-left:6px; padding-right:6px; } }
+.desktop-nav a.nav-active { background:white; color:#201f1e; box-shadow:0 1px 3px #0001; }
+.mobile-tabs a:active, .desktop-nav a:active { transform:scale(.96); }
+
+/* Updated design: organic motion, staggered reveals and featured shimmer. */
+/* Custom Fluid & Organic Animations */
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(1deg); }
+}
+@keyframes pulseSubtle {
+  0%, 100% { opacity: 0.45; transform: scale(1); }
+  50% { opacity: 0.65; transform: scale(1.06); }
+}
+@keyframes shimmerGradient {
+  0% { transform: translateX(-150%) skewX(-20deg); }
+  100% { transform: translateX(250%) skewX(-20deg); }
+}
+.animate-float-slow {
+  animation: floatSlow 7s ease-in-out infinite;
+}
+.animate-float-reverse {
+  animation: floatSlow 9s ease-in-out infinite reverse;
+}
+.animate-pulse-subtle {
+  animation: pulseSubtle 8s ease-in-out infinite;
+}
+.shimmer-effect::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+  transform: translateX(-150%) skewX(-20deg);
+  pointer-events: none;
+  border-radius: inherit;
+}
+.shimmer-effect:hover::after {
+  animation: shimmerGradient 1.4s ease-out;
+}
+/* Scroll reveal classes with graceful fallback */
+.reveal-init {
+  opacity: 1;
+  transform: none;
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+
+}
+.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal-init {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+.reveal-init.reveal-pending { opacity:0; transform:translateY(24px); }
+.reveal-init.reveal-visible { opacity:1; transform:none; }
+.interactive-glow { position:relative; }
+.mobile-layout .shimmer-effect { border:1px solid rgb(153 70 33 / .15); }
+@media (prefers-reduced-motion: reduce) { .reveal-init.reveal-pending { opacity:1; transform:none; } }
