@@ -196,7 +196,7 @@
 <label for="contact-subject-desktop">Objet<input id="contact-subject-desktop" name="subject" type="text" required maxlength="150" placeholder="Parlons de votre projet"></label>
 <label for="contact-message-desktop">Votre message<textarea id="contact-message-desktop" name="message" required minlength="10" maxlength="5000" rows="5" placeholder="Votre question, votre idée ou votre projet…"></textarea></label>
 <p class="contact-help">Tous les champs sont obligatoires. Votre application de messagerie s’ouvrira avec un e-mail prérempli ; vous pourrez le relire avant de l’envoyer.</p>
-<button class="contact-submit" type="submit">Préparer mon e-mail <span aria-hidden="true" class="material-symbols-outlined">north_east</span></button>
+<button class="contact-submit shadow-sm hover:shadow-lg hover:scale-105 active:scale-95 transition-all duration-300 motion-reduce:transition-none motion-reduce:transform-none" type="submit">Préparer mon e-mail <span aria-hidden="true" class="material-symbols-outlined">north_east</span></button>
 <p class="contact-help" role="status" aria-live="polite">{{ contactStatus() }}</p>
 </form>
 <div class="flex flex-wrap items-center justify-center gap-3.5 mb-10">
@@ -460,7 +460,7 @@
 <label for="contact-subject-mobile">Objet<input id="contact-subject-mobile" name="subject" type="text" required maxlength="150" placeholder="Parlons de votre projet"></label>
 <label for="contact-message-mobile">Votre message<textarea id="contact-message-mobile" name="message" required minlength="10" maxlength="5000" rows="5" placeholder="Votre question, votre idée ou votre projet…"></textarea></label>
 <p class="contact-help">Tous les champs sont obligatoires. Votre application de messagerie s’ouvrira avec un e-mail prérempli ; vous pourrez le relire avant de l’envoyer.</p>
-<button class="contact-submit" type="submit">Préparer mon e-mail <span aria-hidden="true" class="material-symbols-outlined">north_east</span></button>
+<button class="contact-submit shadow-sm active:scale-[0.98] transition-all duration-300 motion-reduce:transition-none motion-reduce:transform-none" type="submit">Préparer mon e-mail <span aria-hidden="true" class="material-symbols-outlined">north_east</span></button>
 <p class="contact-help" role="status" aria-live="polite">{{ contactStatus() }}</p>
 </form>
 <!-- Direct Email Badge -->
