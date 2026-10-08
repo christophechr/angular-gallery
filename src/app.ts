@@ -2,6 +2,7 @@ import { Component, ElementRef, ViewChild, signal, afterNextRender, DestroyRef, 
 @Component({selector:'app-root',standalone:true,templateUrl:'./app.html'})
 export class App {
  @ViewChild('projectDialog') dialog!:ElementRef<HTMLDialogElement>;
+ contactStatus=signal('');
  activeSection=signal('galerie');
  activeTab=signal('vitrine'); menuOpen=signal(false); selected=signal(''); draft=signal('');
  tasks=signal(['Dessiner la prochaine interface','Explorer une nouvelle idée','Partager le prototype']);
@@ -84,6 +85,23 @@ export class App {
     document.removeEventListener('focusin', revealFocus);
    });
   });
+ }
+ prepareContactEmail(event:Event){
+  event.preventDefault();
+  const form=event.currentTarget as HTMLFormElement;
+  if(!form.reportValidity()) return;
+  const data=new FormData(form);
+  const name=String(data.get('name') ?? '').trim();
+  const email=String(data.get('email') ?? '').trim();
+  const subject=String(data.get('subject') ?? '').trim();
+  const message=String(data.get('message') ?? '').trim();
+  if(!name || !subject || message.length<10){
+   this.contactStatus.set('Merci de renseigner votre nom, un objet et un message d’au moins 10 caractères.');
+   return;
+  }
+  const body=`${message}\n\nDe : ${name}\nE-mail : ${email}`;
+  window.location.href=`mailto:christophe.chhor.dev@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  this.contactStatus.set('Votre e-mail est prêt. Si votre messagerie ne s’ouvre pas, utilisez l’adresse de contact ci-dessous.');
  }
  openProject(event:Event,name:string){event.preventDefault();this.selected.set(name);this.dialog.nativeElement.showModal();}
  closeOnBackdrop(event:MouseEvent){if(event.target===this.dialog.nativeElement)this.dialog.nativeElement.close();}
