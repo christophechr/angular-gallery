@@ -9,7 +9,7 @@ Le certificat fourni couvre `christophe-chhor.fr` et `*.christophe-chhor.fr`, du
 - Les enregistrements DNS de `christophe-chhor.fr` et `www.christophe-chhor.fr` doivent pointer vers le VPS.
 - Les ports publics 80 et 443 doivent atteindre Nginx.
 - Retrouver sur le VPS la **clé privée correspondant à la CSR de ce certificat**. Elle ne figure pas dans les fichiers fournis. Une nouvelle clé ne correspondrait pas au certificat. Ne pas la mettre dans Git ni dans le chat.
-- Définir dans l’environnement GitHub `production` : `APP_PORT=4000` et `SSR_ALLOWED_HOSTS=christophe-chhor.fr,www.christophe-chhor.fr`.
+- Définir dans l’environnement GitHub `production` : `APP_PORT=4000`.
 - Si un autre port a été choisi, modifier aussi `proxy_pass` dans `nginx/christophe-chhor.fr.conf`.
 
 ## Installation

@@ -29,7 +29,6 @@ rollback() {
 
 docker run -d --name "$container" --restart unless-stopped \
   --publish "127.0.0.1:${APP_PORT}:4000" \
-  --env "SSR_ALLOWED_HOSTS=$SSR_ALLOWED_HOSTS" \
   "$IMAGE" || rollback
 
 for attempt in {1..30}; do

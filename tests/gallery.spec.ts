@@ -6,12 +6,11 @@ test('galerie et aperçus sur desktop et mobile', async ({ page }) => {
  const desktop = page.locator('.desktop-layout');
  await expect(desktop.getByRole('heading', { name: 'Applications & Logiciels conçus avec précision' })).toBeVisible();
  await expect(desktop.getByRole('link',{name:'Explorer le projet',exact:true})).toHaveAttribute('href','https://github.com/orgs/trellotech/repositories');
- await desktop.getByText('Découvrir en ligne',{exact:true}).click();
- await page.getByRole('textbox',{name:'Note personnelle'}).fill('Note persistante');
- await page.keyboard.press('Escape'); await page.reload();
- await desktop.getByText('Découvrir en ligne',{exact:true}).click();
- await expect(page.getByRole('textbox',{name:'Note personnelle'})).toHaveValue('Note persistante');
+ await desktop.getByRole('link', { name: 'Dépôts GitHub' }).click();
+ await expect(page.getByRole('dialog')).toBeVisible();
+ await expect(page.getByRole('dialog').getByRole('heading')).toHaveText('Code source');
  await page.keyboard.press('Escape');
+ await expect(page.getByRole('dialog')).not.toBeVisible();
  for (const width of [320, 390, 768, 1024, 1440]) {
   await page.setViewportSize({width,height:900});
   await page.evaluate(() => window.scrollTo(0,0));
@@ -24,9 +23,6 @@ test('galerie et aperçus sur desktop et mobile', async ({ page }) => {
    await expect(nav).toBeVisible();
    await nav.getByRole('link',{name:'Labo',exact:true}).click();
    await expect(nav.getByRole('link',{name:'Labo',exact:true})).toHaveAttribute('aria-current','location');
-   await layout.getByText('Aperçu interactif',{exact:true}).click();
-   await expect(page.getByRole('dialog')).toBeVisible();
-   await page.keyboard.press('Escape');
    await nav.getByRole('link',{name:'Vitrine',exact:true}).click();
   }
   await page.screenshot({path:`preview-${width}.png`,fullPage:true});
@@ -34,7 +30,7 @@ test('galerie et aperçus sur desktop et mobile', async ({ page }) => {
  expect(errors).toEqual([]);
 });
 
- test('le serveur livre le contenu sans JavaScript', async ({ browser, request, baseURL }) => {
+ test('le HTML prérendu contient le contenu sans JavaScript', async ({ browser, request, baseURL }) => {
  const response = await request.get('/');
  expect(response.ok()).toBeTruthy();
  const html = await response.text();

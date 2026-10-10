@@ -5,7 +5,7 @@ import { App } from './app';
 import { appConfig } from './app.config';
 
 const serverConfig = mergeApplicationConfig(appConfig, {
-  providers: [provideServerRendering(withRoutes([{ path: '**', renderMode: RenderMode.Server }]))],
+  providers: [provideServerRendering(withRoutes([{ path: '', renderMode: RenderMode.Prerender }]))],
 });
 
 export default (context: BootstrapContext) => bootstrapApplication(App, serverConfig, context);

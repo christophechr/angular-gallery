@@ -58,7 +58,6 @@ jobs:
           VPS_KNOWN_HOSTS: ${{ secrets.VPS_KNOWN_HOSTS }}
           VPS_SSH_PORT: ${{ vars.VPS_SSH_PORT || '22' }}
           APP_PORT: ${{ vars.APP_PORT || '4000' }}
-          SSR_ALLOWED_HOSTS: ${{ vars.SSR_ALLOWED_HOSTS }}
           IMAGE: ${{ steps.image.outputs.name }}@${{ steps.build.outputs.digest }}
           REGISTRY_USER: ${{ github.actor }}
           REGISTRY_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -66,15 +65,14 @@ jobs:
           set -euo pipefail
           : "${VPS_HOST:?Missing VPS_HOST}" "${VPS_USER:?Missing VPS_USER}"
           : "${VPS_SSH_KEY:?Missing VPS_SSH_KEY}" "${VPS_KNOWN_HOSTS:?Missing VPS_KNOWN_HOSTS}"
-          : "${SSR_ALLOWED_HOSTS:?Missing SSR_ALLOWED_HOSTS}"
           install -m 700 -d ~/.ssh
           printf '%s\n' "$VPS_SSH_KEY" > ~/.ssh/deploy_key
           printf '%s\n' "$VPS_KNOWN_HOSTS" > ~/.ssh/known_hosts
           chmod 600 ~/.ssh/deploy_key ~/.ssh/known_hosts
           trap 'rm -f ~/.ssh/deploy_key' EXIT
           {
-            printf 'export IMAGE=%q APP_PORT=%q SSR_ALLOWED_HOSTS=%q REGISTRY_USER=%q REGISTRY_TOKEN=%q\n' \
-              "$IMAGE" "$APP_PORT" "$SSR_ALLOWED_HOSTS" "$REGISTRY_USER" "$REGISTRY_TOKEN"
+            printf 'export IMAGE=%q APP_PORT=%q REGISTRY_USER=%q REGISTRY_TOKEN=%q\n' \
+              "$IMAGE" "$APP_PORT" "$REGISTRY_USER" "$REGISTRY_TOKEN"
             cat scripts/deploy-vps.sh
           } | ssh -i ~/.ssh/deploy_key -p "$VPS_SSH_PORT" \
             -o BatchMode=yes -o StrictHostKeyChecking=yes -o ConnectTimeout=15 \

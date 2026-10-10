@@ -4,16 +4,11 @@ RUN npm install --global pnpm@10.28.2
 COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
 RUN pnpm install --frozen-lockfile
 COPY . .
-RUN pnpm build && pnpm prune --prod
+RUN pnpm build
 
-FROM node:22-bookworm-slim AS runtime
-ENV NODE_ENV=production PORT=4000
-WORKDIR /app
-COPY --from=build --chown=node:node /app/dist/gallery ./dist/gallery
-COPY --from=build --chown=node:node /app/node_modules ./node_modules
-COPY --from=build --chown=node:node /app/package.json ./package.json
-USER node
+FROM nginxinc/nginx-unprivileged:stable-alpine AS runtime
+COPY deployment/nginx/static.conf /etc/nginx/conf.d/default.conf
+COPY --from=build /app/dist/gallery/browser /usr/share/nginx/html
 EXPOSE 4000
 HEALTHCHECK --interval=5s --timeout=3s --start-period=15s --retries=6 \
-  CMD node -e "fetch('http://127.0.0.1:4000').then(r => process.exit(r.ok ? 0 : 1)).catch(() => process.exit(1))"
-CMD ["node", "dist/gallery/server/server.mjs"]
+  CMD wget -q -O /dev/null http://127.0.0.1:4000/ || exit 1
