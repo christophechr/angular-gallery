@@ -15,7 +15,7 @@ Vérification des interactions (serveur lancé) : `pnpm exec playwright install 
 
 ## Responsive
 
-Le modèle mobile fourni est utilisé sous 1024 px : en-tête compact, navigation inférieure avec zones sûres et cartes à actions pleine largeur. Sur tablette, la galerie passe à deux colonnes ; sur ordinateur, la composition initiale est conservée. Le zoom reste disponible. Vérifications aux largeurs 320, 390, 768, 1024 et 1440 px.
+Sous 1024 px, la vitrine reprend la direction artistique desktop : fond ivoire, titres noirs, surfaces blanches, cartes arrondies avec aperçus et accents ambrés. L’en-tête et la navigation inférieure flottent dans des capsules assorties, avec prise en compte des zones sûres. La navigation « Accueil / Projets / Vision / Contact » suit le défilement et les ancres. Les projets et les principes passent à deux colonnes dès 640 px. Le formulaire mobile utilise des champs à 16 px pour éviter le zoom automatique. Vérifications aux largeurs 320, 390, 768, 1024 et 1440 px, ainsi que du contenu desktop et mobile sans JavaScript.
 
 ## Prérendu statique (SSG)
 

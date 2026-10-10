@@ -21,11 +21,11 @@ test('galerie et aperçus sur desktop et mobile', async ({ page }) => {
   if (width < 1024) {
    const nav=page.getByRole('navigation',{name:'Navigation mobile'});
    await expect(nav).toBeVisible();
-   await nav.getByRole('link',{name:'Labo',exact:true}).click();
-   await expect(nav.getByRole('link',{name:'Labo',exact:true})).toHaveAttribute('aria-current','location');
-   await nav.getByRole('link',{name:'Vitrine',exact:true}).click();
+   await nav.getByRole('link',{name:'Projets',exact:true}).click();
+   await expect(nav.getByRole('link',{name:'Projets',exact:true})).toHaveAttribute('aria-current','location');
+   await nav.getByRole('link',{name:'Accueil',exact:true}).click();
   }
-  await page.screenshot({path:`preview-${width}.png`,fullPage:true});
+  await page.screenshot({path:`test-results/preview-${width}.png`,fullPage:true});
  }
  expect(errors).toEqual([]);
 });
@@ -41,6 +41,10 @@ test('galerie et aperçus sur desktop et mobile', async ({ page }) => {
  await page.goto('/');
  await expect(page.locator('.desktop-layout h1')).toBeVisible();
  await expect(page.locator('.desktop-layout').getByRole('heading', { name: 'Trellotech', exact: true })).toBeVisible();
+ await page.setViewportSize({width:390,height:844});
+ await expect(page.locator('.mobile-layout h1')).toBeVisible();
+ await expect(page.locator('.mobile-projects').getByRole('heading', { name: 'Trellotech', exact: true })).toBeVisible();
+ await expect(page.getByRole('navigation', { name: 'Navigation mobile' })).toBeVisible();
  await context.close();
 });
 
@@ -58,13 +62,13 @@ test('navbar follows clicks, scrolling and browser history', async ({ page }) =>
  await expect(desktopNav.getByRole('link', {name:'Applications'})).toHaveAttribute('aria-current','location');
  await page.setViewportSize({width:390,height:844});
  const mobileNav=page.locator('.mobile-tabs');
- await mobileNav.getByRole('link',{name:'Manifeste',exact:true}).focus();
+ await mobileNav.getByRole('link',{name:'Vision',exact:true}).focus();
  await page.keyboard.press('Enter');
- await expect(mobileNav.getByRole('link',{name:'Manifeste',exact:true})).toHaveAttribute('aria-current','location');
+ await expect(mobileNav.getByRole('link',{name:'Vision',exact:true})).toHaveAttribute('aria-current','location');
  await page.evaluate(()=>document.getElementById('contact-mobile')!.scrollIntoView());
- await expect(mobileNav.getByRole('link',{name:'Profil',exact:true})).toHaveAttribute('aria-current','location');
+ await expect(mobileNav.getByRole('link',{name:'Contact',exact:true})).toHaveAttribute('aria-current','location');
  await page.goto('/#vision');
- await expect(mobileNav.getByRole('link',{name:'Manifeste',exact:true})).toHaveAttribute('aria-current','location');
+ await expect(mobileNav.getByRole('link',{name:'Vision',exact:true})).toHaveAttribute('aria-current','location');
 });
 
 test('new design reveals cards and lights them on hover', async ({ page }) => {

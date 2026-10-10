@@ -49,10 +49,11 @@ export class App {
     frame = 0;
     const mobile = window.innerWidth < 1024;
     const ids = mobile ? ['accueil-mobile', 'selection-projets', 'philosophie', 'contact-mobile'] : ['accueil', 'galerie', 'vision', 'contact'];
+    const sectionOffset = mobile ? (parseFloat(getComputedStyle(document.documentElement).scrollPaddingTop) || 110) + 2 : 150;
     let current = 0;
     ids.forEach((id, index) => {
      const element = document.getElementById(id);
-     if (element && element.getBoundingClientRect().top <= (mobile ? 110 : 150)) current = index;
+     if (element && element.getBoundingClientRect().top <= sectionOffset) current = index;
     });
     if (window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 2) current = 3;
     this.activeTab.set(['vitrine', 'labo', 'manifeste', 'profil'][current]);
